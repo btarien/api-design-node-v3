@@ -18,6 +18,7 @@ const listSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
+// can't have two lists with same name for same user
 listSchema.index({ user: 1, name: 1 }, { unique: true })
 
 export const List = mongoose.model('list', listSchema)
